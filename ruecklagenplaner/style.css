@@ -1,0 +1,139 @@
+/* Rücklagenplaner – Website
+   Bewusst eine einzige, kleine Stildatei ohne Abhängigkeiten:
+   die Seiten müssen nur zuverlässig erreichbar und lesbar sein. */
+
+:root {
+  --ink: #12212f;
+  --ink-soft: #4a5b6b;
+  --line: #dfe5ea;
+  --surface: #ffffff;
+  --background: #f4f6f8;
+  --brand: #1b3e69;
+  --accent: #2fa07d;
+  --radius: 14px;
+  --measure: 42rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ink: #edf1f5;
+    --ink-soft: #a3b1bf;
+    --line: #27333f;
+    --surface: #131c25;
+    --background: #0b1219;
+    --brand: #7eb4e1;
+    --accent: #52c79d;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--ink);
+  background: var(--background);
+}
+
+.wrap {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 2rem 1.25rem 4rem;
+}
+
+header.site {
+  border-bottom: 1px solid var(--line);
+  background: var(--surface);
+}
+
+header.site .wrap {
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.mark {
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  background: linear-gradient(135deg, #0e2541 0%, #163d66 100%);
+  display: grid;
+  align-content: center;
+  gap: 3px;
+  padding: 7px 6px;
+  flex: none;
+}
+
+.mark span {
+  display: block;
+  height: 4px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.34);
+}
+
+.mark span:nth-child(2) { width: 72%; background: rgba(255, 255, 255, 0.52); }
+.mark span:nth-child(3) { width: 46%; background: var(--accent); }
+.mark span:nth-child(1) { width: 100%; }
+
+.wordmark {
+  font-weight: 650;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 1.05rem;
+}
+
+nav.site { margin-left: auto; display: flex; gap: 1rem; flex-wrap: wrap; }
+nav.site a { color: var(--ink-soft); text-decoration: none; font-size: 0.9rem; }
+nav.site a:hover { color: var(--brand); }
+
+h1 { font-size: 1.9rem; line-height: 1.25; letter-spacing: -0.02em; margin: 0 0 0.5rem; }
+h2 { font-size: 1.15rem; margin: 2.25rem 0 0.5rem; letter-spacing: -0.01em; }
+h3 { font-size: 1rem; margin: 1.5rem 0 0.35rem; }
+p, ul, ol { margin: 0 0 1rem; }
+ul, ol { padding-left: 1.25rem; }
+li { margin-bottom: 0.35rem; }
+
+a { color: var(--brand); }
+
+.lede { font-size: 1.1rem; color: var(--ink-soft); }
+
+.meta { color: var(--ink-soft); font-size: 0.9rem; }
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.35rem;
+  margin: 1.25rem 0;
+}
+
+.card h2, .card h3 { margin-top: 0; }
+
+.placeholder {
+  background: rgba(240, 173, 78, 0.16);
+  border-radius: 5px;
+  padding: 0 0.25rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+}
+
+address { font-style: normal; }
+
+footer.site {
+  border-top: 1px solid var(--line);
+  color: var(--ink-soft);
+  font-size: 0.87rem;
+}
+
+footer.site .wrap { padding: 1.5rem 1.25rem; display: flex; gap: 1rem; flex-wrap: wrap; }
+footer.site a { color: var(--ink-soft); }
