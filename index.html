@@ -5,10 +5,27 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Your App World — Kleine Apps von Stefan Hölting</title>
 <meta name="description" content="Your App World ist die Heimat kleiner, nützlicher Apps von Stefan Hölting — von der Sammlungsverwaltung bis zur Krisenvorsorge.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet">
+<meta name="theme-color" content="#E8E7DC">
+<link rel="canonical" href="https://your-app-world.de/">
+
+<!-- Favicon als Data-URI: keine zusätzliche Datei, keine externe Anfrage. -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231C2118'/%3E%3Ccircle cx='11' cy='11' r='3' fill='%23E8E7DC'/%3E%3C/svg%3E">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Your App World — Kleine Apps von Stefan Hölting">
+<meta property="og:description" content="Kleine, sorgfältig gebaute Apps für den Alltag.">
+<meta property="og:url" content="https://your-app-world.de/">
+<meta property="og:locale" content="de_DE">
+
 <style>
+  /*
+    Schriften bewusst aus dem System statt von Google Fonts:
+    Ein Einbinden von fonts.googleapis.com überträgt die IP-Adresse jedes
+    Besuchers an Google in die USA. Das ist ohne Einwilligung datenschutzrechtlich
+    angreifbar (vgl. LG München I, Urteil vom 20.01.2022 – 3 O 17493/20) und war
+    Anlass zahlreicher Abmahnungen. Diese Seite lädt daher keinerlei externe
+    Ressourcen.
+  */
   :root {
     --paper: #E8E7DC;
     --paper-raised: #F2F1E7;
@@ -16,11 +33,11 @@
     --ink-soft: #4B5245;
     --line: #C7C6B6;
     --blue: #3E6E86;
-    --gold: #B9852A;
+    --gold: #8A6318;   /* abgedunkelt: weißer Text darauf erreicht jetzt AA-Kontrast */
     --green: #3F6B4F;
     --rust: #A8462F;
-    --display: 'Space Mono', monospace;
-    --body: 'Source Serif 4', Georgia, serif;
+    --display: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+    --body: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
     --radius: 3px;
   }
 
@@ -39,14 +56,40 @@
     font-family: var(--body);
     font-size: 18px;
     line-height: 1.6;
+    /* Lange E-Mail-Adressen und URLs sollen umbrechen statt die Seite
+       auf schmalen Geräten seitlich überlaufen zu lassen. */
+    overflow-wrap: break-word;
   }
 
-  a { color: inherit; }
+  a { color: inherit; overflow-wrap: anywhere; }
 
   .wrap {
     max-width: 980px;
     margin: 0 auto;
     padding: 0 28px;
+  }
+
+  /* Sprungmarke für Tastaturnutzer */
+  .skip {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+    background: var(--ink);
+    color: var(--paper);
+    padding: 10px 16px;
+    font-family: var(--display);
+    font-size: 13px;
+    z-index: 100;
+  }
+  .skip:focus {
+    width: auto;
+    height: auto;
+    clip-path: none;
+    left: 8px;
+    top: 8px;
   }
 
   /* ---- Header ---- */
@@ -103,6 +146,7 @@
     gap: 22px;
     font-family: var(--display);
     font-size: 13px;
+    flex-wrap: wrap;
   }
 
   nav a {
@@ -113,7 +157,7 @@
     transition: border-color 0.15s ease, color 0.15s ease;
   }
   nav a:hover, nav a:focus-visible { color: var(--ink); border-color: var(--gold); }
-  nav a:focus-visible { outline: none; }
+  nav a:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
 
   /* ---- Hero ---- */
   .hero {
@@ -158,8 +202,8 @@
   .hero-tag h1 {
     font-family: var(--display);
     font-weight: 700;
-    font-size: clamp(30px, 5vw, 46px);
-    line-height: 1.08;
+    font-size: clamp(28px, 5vw, 44px);
+    line-height: 1.1;
     letter-spacing: -0.01em;
   }
 
@@ -169,13 +213,14 @@
     color: var(--ink-soft);
     max-width: 560px;
     margin-top: 30px;
-    transform: rotate(0);
   }
 
-  /* ---- Section headings ---- */
+  /* ---- Sections ---- */
   .section {
     padding: 56px 0;
     border-top: 1px solid var(--line);
+    /* Sonst verschwindet die Überschrift beim Ankersprung unter dem klebenden Kopf. */
+    scroll-margin-top: 84px;
   }
 
   .section-head {
@@ -259,19 +304,36 @@
     font-size: 16px;
   }
 
+  .card-links {
+    margin-top: 14px;
+    font-family: var(--display);
+    font-size: 12.5px;
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  .card-links a { color: var(--ink-soft); }
+  .card-links a:hover { color: var(--ink); }
+
   .card--schneekugel { --card-color: var(--blue); }
   .card--yugioh { --card-color: var(--gold); }
   .card--ruecklage { --card-color: var(--green); }
   .card--notvorrat { --card-color: var(--rust); }
 
-  /* ---- Legal sections ---- */
-  .legal h2 { margin-bottom: 20px; }
+  /* ---- Legal / text sections ---- */
+  .legal h2 { margin-bottom: 20px; font-family: var(--display); font-size: 22px; }
   .legal address {
     font-style: normal;
     font-family: var(--body);
     font-size: 17px;
     line-height: 1.7;
     margin-bottom: 24px;
+  }
+  .legal h3 {
+    font-family: var(--display);
+    font-size: 15px;
+    margin: 30px 0 10px;
+    letter-spacing: 0.02em;
   }
   .legal h4 {
     font-family: var(--display);
@@ -280,7 +342,10 @@
     letter-spacing: 0.02em;
   }
   .legal p { color: var(--ink-soft); font-size: 16.5px; margin-bottom: 10px; }
+  .legal ul { color: var(--ink-soft); font-size: 16.5px; margin: 0 0 10px 1.2em; }
+  .legal li { margin-bottom: 5px; }
   .legal p:last-child { margin-bottom: 0; }
+  .legal .stand { font-family: var(--display); font-size: 12.5px; margin-top: 26px; }
 
   /* ---- Footer ---- */
   footer {
@@ -301,14 +366,17 @@
 </head>
 <body>
 
+<a class="skip" href="#main">Zum Inhalt springen</a>
+
 <header>
   <div class="wrap header-inner">
     <a href="#top" class="brand">
       <span class="brand-tag" aria-hidden="true"></span>
       Your App World
     </a>
-    <nav>
+    <nav aria-label="Hauptnavigation">
       <a href="#apps">Apps</a>
+      <a href="#support">Support</a>
       <a href="#impressum">Impressum</a>
       <a href="#datenschutz">Datenschutz</a>
     </nav>
@@ -316,6 +384,7 @@
 </header>
 
 <main id="top">
+  <span id="main"></span>
 
   <section class="hero wrap">
     <span class="eyebrow">Ein Portfolio kleiner Apps</span>
@@ -348,6 +417,11 @@
         <span class="card-tab">In Entwicklung</span>
         <h3>Rücklagenplaner</h3>
         <p>Finanzielle Rücklagen planen und im Blick behalten — einfache Übersicht statt komplizierter Tabellen.</p>
+        <p class="card-links">
+          <a href="/ruecklagenplaner/">Übersicht</a>
+          <a href="/ruecklagenplaner/datenschutz.html">Datenschutz</a>
+          <a href="/ruecklagenplaner/support.html">Support</a>
+        </p>
       </article>
 
       <article class="card card--notvorrat">
@@ -359,9 +433,24 @@
     </div>
   </section>
 
+  <section class="section legal wrap" id="support">
+    <h2>Support</h2>
+    <p>Fragen, Fehlermeldungen und Wünsche gehen direkt an eine Person, nicht an ein Ticketsystem. Antwort in der Regel innerhalb von zwei Werktagen.</p>
+
+    <h4>Allgemein</h4>
+    <p>E-Mail: <a href="mailto:support@your-app-world.de">support@your-app-world.de</a></p>
+
+    <h4>Direkt zur jeweiligen App</h4>
+    <ul>
+      <li>Rücklagenplaner: <a href="mailto:support-ruecklagenplaner@your-app-world.de">support-ruecklagenplaner@your-app-world.de</a> — <a href="/ruecklagenplaner/support.html">Hilfe &amp; häufige Fragen</a></li>
+    </ul>
+
+    <p>Für eine schnelle Antwort hilft: Name der App, deren Versionsnummer, iOS-Version und Gerätemodell.</p>
+  </section>
+
   <section class="section legal wrap" id="impressum">
     <h2>Impressum</h2>
-    <p style="margin-bottom: 18px; color: var(--ink-soft); font-size: 15px;">Angaben gemäß § 5 Digitale-Dienste-Gesetz (DDG)</p>
+    <p style="font-size: 15px;">Angaben gemäß § 5 Digitale-Dienste-Gesetz (DDG)</p>
 
     <address>
       Stefan Hölting<br>
@@ -372,40 +461,63 @@
     </address>
 
     <h4>Kontakt</h4>
-    <p>E-Mail: support@your-app-world.de</p>
+    <p>E-Mail: <a href="mailto:support@your-app-world.de">support@your-app-world.de</a></p>
 
     <h4>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h4>
     <p>Stefan Hölting, Anschrift wie oben.</p>
 
-    <h4>Hinweis</h4>
-    <p>Einzelunternehmer, kein Handelsregistereintrag. Umsatzsteuer-Identifikationsnummer wird nach Erhalt ergänzt.</p>
+    <h4>Unternehmensform und Steuerangaben</h4>
+    <p>Einzelunternehmen, kein Eintrag im Handelsregister. Eine Umsatzsteuer-Identifikationsnummer nach § 27 a UStG liegt derzeit nicht vor; die Angabe ist nach § 5 Abs. 1 Nr. 6 DDG nur erforderlich, soweit eine solche Nummer vorhanden ist. Sie wird nach Erteilung ergänzt.</p>
+
+    <h4>Vertrieb der Apps</h4>
+    <p>Der Vertrieb erfolgt ausschließlich über den Apple App Store. Vertragspartner für Kauf und In-App-Käufe ist Apple Distribution International Ltd., Hollyhill Industrial Estate, Hollyhill, Cork, Irland.</p>
+
+    <h4>Verbraucherstreitbeilegung</h4>
+    <p>Wir sind nicht bereit und nicht verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+
+    <h4>Haftung für Inhalte und Links</h4>
+    <p>Als Diensteanbieter sind wir für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Für Inhalte externer Links sind deren Betreiber verantwortlich; zum Zeitpunkt der Verlinkung waren keine Rechtsverstöße erkennbar.</p>
   </section>
 
   <section class="section legal wrap" id="datenschutz">
     <h2>Datenschutzerklärung</h2>
+    <p>Diese Erklärung gilt für den Besuch dieser Website. Wie die einzelnen Apps mit Daten umgehen, steht in der jeweils eigenen Datenschutzerklärung der App — für den Rücklagenplaner unter <a href="/ruecklagenplaner/datenschutz.html">your-app-world.de/ruecklagenplaner/datenschutz.html</a>.</p>
 
-    <h4>Verantwortlicher</h4>
-    <p>Stefan Hölting, c/o Autorenglück #42102, Albert-Einstein-Straße 47, 02977 Hoyerswerda. Kontakt: support@your-app-world.de</p>
+    <h3>Verantwortlicher</h3>
+    <p>Stefan Hölting, c/o Autorenglück #42102, Albert-Einstein-Straße 47, 02977 Hoyerswerda, Deutschland. Kontakt: <a href="mailto:support@your-app-world.de">support@your-app-world.de</a></p>
 
-    <h4>Hosting dieser Website</h4>
-    <p>Diese Website wird über Google Workspace / Google Sites betrieben. Beim Aufruf der Seite werden technisch notwendige Verbindungsdaten (u. a. IP-Adresse, Zeitpunkt des Zugriffs) durch Google als Auftragsverarbeiter verarbeitet. Näheres regelt die Datenschutzerklärung von Google.</p>
+    <h3>Das Wichtigste zuerst</h3>
+    <p>Diese Website setzt <strong>keine Cookies</strong>, bindet <strong>keine Analyse- oder Werbedienste</strong> ein und lädt <strong>keine externen Schriftarten, Skripte oder Bilder</strong> nach. Es gibt kein Kontaktformular und keine Nutzerkonten. Eine Einwilligung nach § 25 TDDDG ist deshalb nicht erforderlich — daher sehen Sie hier auch kein Cookie-Banner.</p>
 
-    <h4>Kontaktaufnahme per E-Mail</h4>
-    <p>Wenn Sie uns per E-Mail kontaktieren, werden Ihre Angaben zur Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.</p>
+    <h3>Hosting und Server-Protokolle</h3>
+    <p>Diese Website wird als statische Seite über <strong>GitHub Pages</strong> bereitgestellt. Anbieter ist die GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA — ein Unternehmen der Microsoft-Gruppe. Die Auslieferung erfolgt über ein vorgelagertes Content Delivery Network.</p>
+    <p>Beim Aufruf der Seite verarbeitet GitHub technisch notwendige Verbindungsdaten, insbesondere IP-Adresse, Datum und Uhrzeit des Zugriffs, die angeforderte Datei, den übertragenen Datenumfang sowie Browser- und Betriebssystemangaben. Diese Verarbeitung ist erforderlich, um die Seite überhaupt ausliefern und vor Angriffen schützen zu können.</p>
+    <p><strong>Wir selbst erhalten diese Protokolle nicht</strong> und haben keinen Zugriff darauf; GitHub Pages stellt Seitenbetreibern keine Server-Logs zur Verfügung.</p>
+    <p>Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO. Unser berechtigtes Interesse liegt in der sicheren, stabilen und wirtschaftlichen Bereitstellung dieser Website.</p>
+    <p>Da GitHub seinen Sitz in den USA hat, kann eine Verarbeitung auch dort stattfinden. GitHub bzw. Microsoft sind unter dem EU-US Data Privacy Framework zertifiziert; ergänzend bestehen die Standardvertragsklauseln der EU-Kommission. Näheres regelt die Datenschutzerklärung von GitHub: <a href="https://docs.github.com/de/site-policy/privacy-policies/github-privacy-statement">docs.github.com — GitHub Privacy Statement</a></p>
 
-    <h4>Apps &amp; App-Stores</h4>
-    <p>Der Erwerb und die Nutzung unserer Apps erfolgt über die jeweiligen App-Stores (z. B. Apple App Store). Dort fallen eigene Datenverarbeitungen an, die der Datenschutzerklärung des jeweiligen Store-Betreibers unterliegen. Angaben zur Datenverarbeitung innerhalb der einzelnen Apps finden sich in der jeweiligen In-App-Datenschutzerklärung.</p>
+    <h3>Kontaktaufnahme per E-Mail</h3>
+    <p>Wenn Sie uns schreiben, verarbeiten wir Ihre Angaben ausschließlich zur Bearbeitung der Anfrage und für den Fall von Anschlussfragen. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Beantwortung Ihrer Anfrage); geht es um einen Vertrag oder dessen Anbahnung, zusätzlich Art. 6 Abs. 1 lit. b DSGVO.</p>
+    <p>Die Nachrichten werden gelöscht, sobald sie nicht mehr benötigt werden, spätestens nach Ablauf gesetzlicher Aufbewahrungsfristen. Eine Weitergabe an Dritte erfolgt nicht.</p>
 
-    <h4>Ihre Rechte</h4>
-    <p>Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit sowie Widerspruch gegen die Verarbeitung Ihrer personenbezogenen Daten. Wenden Sie sich hierzu an die oben genannte Kontaktadresse.</p>
+    <h3>Apps und App Stores</h3>
+    <p>Erwerb und Nutzung unserer Apps laufen über den jeweiligen App Store. Dort fallen eigene Datenverarbeitungen an, die der Datenschutzerklärung des Store-Betreibers unterliegen — bei Apple: <a href="https://www.apple.com/de/legal/privacy/">apple.com/de/legal/privacy</a>. Wir erhalten von Apple ausschließlich aggregierte, nicht personenbezogene Verkaufs- und Auszahlungsberichte. Zahlungsdaten werden von uns weder erhoben noch gespeichert.</p>
 
+    <h3>Ihre Rechte</h3>
+    <p>Sie haben das Recht auf Auskunft (Art. 15 DSGVO), Berichtigung (Art. 16), Löschung (Art. 17), Einschränkung der Verarbeitung (Art. 18), Datenübertragbarkeit (Art. 20) sowie auf Widerspruch gegen Verarbeitungen, die auf Art. 6 Abs. 1 lit. f DSGVO beruhen (Art. 21 DSGVO). Wenden Sie sich dafür an die oben genannte Kontaktadresse.</p>
+    <p>Unabhängig davon haben Sie das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren (Art. 77 DSGVO) — insbesondere bei der Behörde Ihres gewöhnlichen Aufenthaltsorts, Ihres Arbeitsplatzes oder des Orts des mutmaßlichen Verstoßes.</p>
+
+    <h3>Änderungen</h3>
+    <p>Wir passen diese Erklärung an, wenn Änderungen an der Website oder der Rechtslage das erfordern.</p>
+
+    <p class="stand">Stand: 14. August 2026</p>
   </section>
 
 </main>
 
 <footer class="wrap">
   <p>© 2026 Stefan Hölting — Your App World</p>
-  <p>support@your-app-world.de</p>
+  <p><a href="mailto:support@your-app-world.de">support@your-app-world.de</a></p>
 </footer>
 
 </body>
