@@ -315,6 +315,15 @@
   .card-links a { color: var(--ink-soft); }
   .card-links a:hover { color: var(--ink); }
 
+  /* Noch nicht eingetragener App-Store-Link. Fällt bewusst auf, damit er
+     vor der Veröffentlichung nicht übersehen wird. */
+  .placeholder {
+    background: rgba(240, 173, 78, 0.16);
+    border-radius: 5px;
+    padding: 0 0.25rem;
+    color: var(--ink-soft);
+  }
+
   .card--schneekugel { --card-color: var(--blue); }
   .card--yugioh { --card-color: var(--gold); }
   .card--ruecklage { --card-color: var(--green); }
@@ -405,6 +414,12 @@
         <span class="card-tab">Bald verfügbar</span>
         <h3>Schneekugel</h3>
         <p>Saisonale Grußkarten für besondere Anlässe — mit wechselnden Motiven durchs Jahr.</p>
+        <p class="card-links">
+          <a href="/schneekugel/">Übersicht</a>
+          <a href="/schneekugel/datenschutz.html">Datenschutz</a>
+          <a href="/schneekugel/support.html">Support</a>
+          <span class="placeholder" data-appstore="schneekugel">[App-Store-Link]</span>
+        </p>
       </article>
 
       <article class="card card--yugioh">
@@ -415,6 +430,7 @@
           <a href="/mytcgcollection/">Übersicht</a>
           <a href="/mytcgcollection/datenschutz.html">Datenschutz</a>
           <a href="/mytcgcollection/support.html">Support</a>
+          <span class="placeholder" data-appstore="mytcgcollection">[App-Store-Link]</span>
         </p>
       </article>
 
@@ -426,6 +442,7 @@
           <a href="/ruecklagenplaner/">Übersicht</a>
           <a href="/ruecklagenplaner/datenschutz.html">Datenschutz</a>
           <a href="/ruecklagenplaner/support.html">Support</a>
+          <span class="placeholder" data-appstore="ruecklagenplaner">[App-Store-Link]</span>
         </p>
       </article>
 
@@ -437,6 +454,7 @@
           <a href="/notvorrat/">Übersicht</a>
           <a href="/notvorrat/datenschutz.html">Datenschutz</a>
           <a href="/notvorrat/support.html">Support</a>
+          <span class="placeholder" data-appstore="notvorrat">[App-Store-Link]</span>
         </p>
       </article>
 
@@ -445,7 +463,7 @@
 
   <section class="section legal wrap" id="support">
     <h2>Support</h2>
-    <p>Fragen, Fehlermeldungen und Wünsche gehen direkt an eine Person, nicht an ein Ticketsystem. Antwort in der Regel innerhalb von zwei Werktagen.</p>
+    <p>Fragen, Fehlermeldungen und Wünsche gehen direkt an eine Person, nicht an ein Ticketsystem. Antwort in der Regel innerhalb weniger Werktage.</p>
 
     <h4>Allgemein</h4>
     <p>E-Mail: <a href="mailto:support@your-app-world.de">support@your-app-world.de</a></p>
@@ -454,6 +472,7 @@
     <ul>
       <li>Rücklagenplaner: <a href="mailto:support-ruecklagenplaner@your-app-world.de">support-ruecklagenplaner@your-app-world.de</a> — <a href="/ruecklagenplaner/support.html">Hilfe &amp; häufige Fragen</a></li>
       <li>My TCG Collection: <a href="mailto:support-mytcgcollection@your-app-world.de">support-mytcgcollection@your-app-world.de</a> — <a href="/mytcgcollection/support.html">Hilfe &amp; häufige Fragen</a></li>
+      <li>Schneekugel: <a href="mailto:support-schneekugel@your-app-world.de">support-schneekugel@your-app-world.de</a> — <a href="/schneekugel/support.html">Hilfe &amp; häufige Fragen</a></li>
       <li>Notvorrat: <a href="mailto:support-notvorrat@your-app-world.de">support-notvorrat@your-app-world.de</a> — <a href="/notvorrat/support.html">Hilfe &amp; häufige Fragen</a></li>
     </ul>
 
@@ -493,7 +512,7 @@
 
   <section class="section legal wrap" id="datenschutz">
     <h2>Datenschutzerklärung</h2>
-    <p>Diese Erklärung gilt für den Besuch dieser Website. Wie die einzelnen Apps mit Daten umgehen, steht in der jeweils eigenen Datenschutzerklärung der App — für den Rücklagenplaner unter <a href="/ruecklagenplaner/datenschutz.html">your-app-world.de/ruecklagenplaner/datenschutz.html</a>, für My TCG Collection unter <a href="/mytcgcollection/datenschutz.html">your-app-world.de/mytcgcollection/datenschutz.html</a>, für Notvorrat unter <a href="/notvorrat/datenschutz.html">your-app-world.de/notvorrat/datenschutz.html</a>.</p>
+    <p>Diese Erklärung gilt für den Besuch dieser Website. Wie die einzelnen Apps mit Daten umgehen, steht in der jeweils eigenen Datenschutzerklärung der App; sie ist oben im Abschnitt <a href="#apps">Apps</a> bei jeder App verlinkt.</p>
 
     <h3>Verantwortlicher</h3>
     <p>Stefan Hölting, c/o Autorenglück #42102, Albert-Einstein-Straße 47, 02977 Hoyerswerda, Deutschland. Kontakt: <a href="mailto:support@your-app-world.de">support@your-app-world.de</a></p>
@@ -509,8 +528,12 @@
     <p>Da GitHub seinen Sitz in den USA hat, kann eine Verarbeitung auch dort stattfinden. GitHub bzw. Microsoft sind unter dem EU-US Data Privacy Framework zertifiziert; ergänzend bestehen die Standardvertragsklauseln der EU-Kommission. Näheres regelt die Datenschutzerklärung von GitHub: <a href="https://docs.github.com/de/site-policy/privacy-policies/github-privacy-statement">docs.github.com — GitHub Privacy Statement</a></p>
 
     <h3>Kontaktaufnahme per E-Mail</h3>
-    <p>Wenn Sie uns schreiben, verarbeiten wir Ihre Angaben ausschließlich zur Bearbeitung der Anfrage und für den Fall von Anschlussfragen. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Beantwortung Ihrer Anfrage); geht es um einen Vertrag oder dessen Anbahnung, zusätzlich Art. 6 Abs. 1 lit. b DSGVO.</p>
-    <p>Die Nachrichten werden gelöscht, sobald sie nicht mehr benötigt werden, spätestens nach Ablauf gesetzlicher Aufbewahrungsfristen. Eine Weitergabe an Dritte erfolgt nicht.</p>
+    <p>Wenn Sie uns schreiben, verarbeiten wir Ihre Angaben — Absenderadresse, Betreff, Nachrichtentext und etwaige Anhänge — ausschließlich zur Bearbeitung der Anfrage und für den Fall von Anschlussfragen. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Beantwortung Ihrer Anfrage); geht es um einen Vertrag oder dessen Anbahnung, zusätzlich Art. 6 Abs. 1 lit. b DSGVO.</p>
+    <p>Unsere Support-Postfächer werden von <strong>Google</strong> gehostet (Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland). Ihre Nachricht liegt dort in unserem Postfach und wird ausschließlich von uns persönlich gelesen und beantwortet.</p>
+    <p><strong>Ein KI-Dienst kommt dabei nicht zum Einsatz.</strong> Die Inhalte Ihrer Nachricht werden weder automatisiert ausgewertet noch zum Training von KI-Modellen verwendet; eine automatisierte Entscheidung im Einzelfall im Sinne des Art. 22 DSGVO findet nicht statt.</p>
+    <p>Google ist für uns Auftragsverarbeiter nach Art. 28 DSGVO; ein entsprechender Vertrag zur Auftragsverarbeitung liegt vor. Eine Verarbeitung kann auch in den USA stattfinden. Die Übermittlung ist über die Standardvertragsklauseln der EU-Kommission abgesichert; Google LLC ist zusätzlich unter dem EU-US Data Privacy Framework zertifiziert.</p>
+    <p>Was Sie uns schreiben, entscheiden Sie selbst: Für eine Supportanfrage benötigen wir keine Kontostände, Kontonummern oder Kontoauszüge. Bitte schwärzen Sie solche Angaben in Screenshots.</p>
+    <p>Die Nachrichten werden gelöscht, sobald sie nicht mehr benötigt werden, spätestens nach Ablauf gesetzlicher Aufbewahrungsfristen. Eine darüber hinausgehende Weitergabe an Dritte erfolgt nicht.</p>
 
     <h3>Apps und App Stores</h3>
     <p>Erwerb und Nutzung unserer Apps laufen über den jeweiligen App Store. Dort fallen eigene Datenverarbeitungen an, die der Datenschutzerklärung des Store-Betreibers unterliegen — bei Apple: <a href="https://www.apple.com/de/legal/privacy/">apple.com/de/legal/privacy</a>. Wir erhalten von Apple ausschließlich aggregierte, nicht personenbezogene Verkaufs- und Auszahlungsberichte. Zahlungsdaten werden von uns weder erhoben noch gespeichert.</p>
@@ -522,7 +545,7 @@
     <h3>Änderungen</h3>
     <p>Wir passen diese Erklärung an, wenn Änderungen an der Website oder der Rechtslage das erfordern.</p>
 
-    <p class="stand">Stand: 17. August 2026</p>
+    <p class="stand">Stand: 29. August 2026</p>
   </section>
 
 </main>
