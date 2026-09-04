@@ -36,6 +36,7 @@
     --gold: #8A6318;   /* abgedunkelt: weißer Text darauf erreicht jetzt AA-Kontrast */
     --green: #3F6B4F;
     --rust: #A8462F;
+    --slate: #2F5F66;  /* Anomaly: das Cyan der App, auf Weiß kontraststark abgedunkelt */
     --display: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
     --body: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
     --radius: 3px;
@@ -328,6 +329,7 @@
   .card--yugioh { --card-color: var(--gold); }
   .card--ruecklage { --card-color: var(--green); }
   .card--notvorrat { --card-color: var(--rust); }
+  .card--anomaly { --card-color: var(--slate); }
 
   /* ---- Legal / text sections ---- */
   .legal h2 { margin-bottom: 20px; font-family: var(--display); font-size: 22px; }
@@ -406,7 +408,7 @@
   <section class="section wrap" id="apps">
     <div class="section-head">
       <h2>Apps</h2>
-      <span class="count">4 Projekte</span>
+      <span class="count">5 Projekte</span>
     </div>
     <div class="grid">
 
@@ -446,6 +448,18 @@
         </p>
       </article>
 
+      <article class="card card--anomaly">
+        <span class="card-tab">In Entwicklung</span>
+        <h3>Anomaly</h3>
+        <p>Deduktionsrätsel auf einer Forschungsstation im Orbit — Protokolle auswerten, Widersprüche ausschließen, nie raten. Vollständig offline.</p>
+        <p class="card-links">
+          <a href="/anomaly/">Übersicht</a>
+          <a href="/anomaly/datenschutz.html">Datenschutz</a>
+          <a href="/anomaly/support.html">Support</a>
+          <span class="placeholder" data-appstore="anomaly">[App-Store-Link]</span>
+        </p>
+      </article>
+
       <article class="card card--notvorrat">
         <span class="card-tab">In Entwicklung</span>
         <h3>Notvorrat</h3>
@@ -474,6 +488,7 @@
       <li>My TCG Collection: <a href="mailto:support-mytcgcollection@your-app-world.de">support-mytcgcollection@your-app-world.de</a> — <a href="/mytcgcollection/support.html">Hilfe &amp; häufige Fragen</a></li>
       <li>Schneekugel: <a href="mailto:support-schneekugel@your-app-world.de">support-schneekugel@your-app-world.de</a> — <a href="/schneekugel/support.html">Hilfe &amp; häufige Fragen</a></li>
       <li>Notvorrat: <a href="mailto:support-notvorrat@your-app-world.de">support-notvorrat@your-app-world.de</a> — <a href="/notvorrat/support.html">Hilfe &amp; häufige Fragen</a></li>
+      <li>Anomaly: <a href="mailto:support-anomaly@your-app-world.de">support-anomaly@your-app-world.de</a> — <a href="/anomaly/support.html">Hilfe &amp; häufige Fragen</a></li>
     </ul>
 
     <p>Für eine schnelle Antwort hilft: Name der App, deren Versionsnummer, iOS-Version und Gerätemodell.</p>
