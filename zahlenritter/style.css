@@ -1,0 +1,149 @@
+/* Zahlenritter – Website
+   Bewusst eine einzige, kleine Stildatei ohne Abhängigkeiten und ohne
+   externe Schriften. Farben aus Palette (Tokens.swift) der App: Pergament,
+   Tinte, Karmesin, Gold. Die App ist hell, die Seite auch. */
+
+:root {
+  --parchment: #fbf1dc;
+  --parchment-mid: #f1e1be;
+  --ink: #3a2a1c;
+  --ink-soft: #5c4630;
+  --line: #e2cc9c;
+  --crimson: #8e2436;
+  --gold: #c9922e;
+  --gold-dark: #8e6a33;
+  --forest: #2e5b3e;
+  --radius: 18px;
+  --measure: 42rem;
+  color-scheme: light;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--ink);
+  background: var(--parchment);
+  overflow-wrap: break-word;
+}
+
+h1, h2, h3, .wordmark {
+  font-family: ui-rounded, "SF Pro Rounded", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.wrap {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 2rem 1.25rem 4rem;
+}
+
+header.site {
+  border-top: 8px solid var(--crimson);
+  border-bottom: 2px solid var(--line);
+  background: var(--parchment-mid);
+}
+
+header.site .wrap {
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+/* Das „#“ auf Sir Ziffers Schild. */
+.mark {
+  width: 34px;
+  height: 38px;
+  border-radius: 6px 6px 17px 17px;
+  background: var(--crimson);
+  border: 2px solid var(--gold);
+  color: var(--parchment);
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 1;
+  flex: none;
+}
+
+.wordmark {
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 1.15rem;
+}
+
+nav.site { margin-left: auto; display: flex; gap: 1rem; flex-wrap: wrap; }
+nav.site a { color: var(--ink-soft); text-decoration: none; font-size: 0.9rem; }
+nav.site a:hover, nav.site a[aria-current="page"] { color: var(--crimson); }
+
+h1 { font-size: 1.9rem; line-height: 1.25; letter-spacing: -0.01em; margin: 0 0 0.5rem; }
+h2 { font-size: 1.2rem; margin: 2.25rem 0 0.5rem; }
+h3 { font-size: 1.02rem; margin: 1.5rem 0 0.35rem; }
+p, ul, ol { margin: 0 0 1rem; }
+ul, ol { padding-left: 1.25rem; }
+li { margin-bottom: 0.35rem; }
+
+a { color: var(--crimson); overflow-wrap: anywhere; }
+
+.lede { font-size: 1.1rem; color: var(--ink-soft); }
+
+.meta { color: var(--ink-soft); font-size: 0.9rem; }
+
+.card {
+  background: #fffaf0;
+  border: 2px solid var(--gold);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.35rem;
+  margin: 1.25rem 0;
+}
+
+.card h2, .card h3 { margin-top: 0; }
+
+.equation {
+  font-family: ui-rounded, "SF Pro Rounded", -apple-system, sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--ink);
+  margin: 0 0 0.5rem;
+}
+.equation .slot {
+  display: inline-block;
+  min-width: 1.6em;
+  text-align: center;
+  color: var(--parchment);
+  background: var(--forest);
+  border-radius: 10px;
+}
+
+.placeholder {
+  background: rgba(240, 173, 78, 0.22);
+  border-radius: 5px;
+  padding: 0 0.25rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+}
+.grid .card { margin: 0; }
+
+address { font-style: normal; }
+
+footer.site {
+  border-top: 2px solid var(--line);
+  color: var(--ink-soft);
+  font-size: 0.87rem;
+}
+
+footer.site .wrap { padding: 1.5rem 1.25rem; display: flex; gap: 1rem; flex-wrap: wrap; }
+footer.site a { color: var(--ink-soft); }
