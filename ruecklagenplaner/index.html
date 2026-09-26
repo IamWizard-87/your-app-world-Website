@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Rücklagenplaner – frei verfügbares Geld auf einen Blick</title>
-<meta name="description" content="Rücklagenplaner trennt geplante Ausgaben vom tatsächlich freien Guthaben – ohne Unterkonten, ohne Bankanbindung, ohne Datensammlung.">
+<meta name="description" content="Rücklagenplaner zeigt, was vom Kontostand nach allen geplanten Ausgaben frei verfügbar bleibt – und warnt deutlich, sobald die Rückstellungen nicht mehr gedeckt sind. Ohne Bankanbindung, ohne Datensammlung.">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -23,23 +23,25 @@
 </header>
 
 <main class="wrap">
-  <h1>Was auf dem Konto liegt, ist selten frei.</h1>
+  <h1>Auf dem Konto liegt selten nur freies Geld.</h1>
   <p class="lede">
-    Urlaub, Autoreparatur, Zahnersatz, der nächste Laptop: Ein Teil des Guthabens ist
-    längst verplant. Rücklagenplaner zieht diese Rückstellungen vom Kontostand ab und zeigt,
-    was für laufende Kosten wirklich übrig bleibt.
+    Urlaub, die nächste Autoreparatur, Zahnersatz, ein neuer Laptop: Ein Teil des
+    Guthabens ist längst verplant. Rücklagenplaner zieht diese Rückstellungen vom
+    Kontostand ab und zeigt, was für laufende Kosten wirklich übrig bleibt.
   </p>
 
   <div class="card">
     <h2>Ein Beispiel</h2>
     <p>
-      10.000 € auf dem Konto. 2.000 € für den Urlaub, 1.500 € für Autoreparaturen,
-      2.500 € für Gesundheitskosten, 3.000 € für einen neuen Laptop.
-      <strong>Frei verfügbar: 1.000 €.</strong>
+      4.000 € auf dem Konto. 800 € für den Urlaub, 600 € für Autoreparaturen,
+      1.000 € für Gesundheitskosten, 1.200 € für einen neuen Laptop.
+      <strong>Frei verfügbar: 400 €.</strong>
     </p>
     <p class="meta">
-      Sinkt der Kontostand auf 8.500 €, weist Rücklagenplaner die Unterdeckung von 500 € deutlich aus –
-      inklusive der Frage, welche Rückstellung dann noch gedeckt ist.
+      Dieser Wert steht mit Kontostand und gebundener Summe direkt beim Öffnen der App,
+      dazu ein Balken für den bereits vergebenen Anteil. Sinkt der Kontostand auf
+      3.400 €, beziffert Rücklagenplaner die Unterdeckung von 200 € – und zeigt,
+      welche Rückstellung dann noch gedeckt ist.
     </p>
   </div>
 
@@ -47,29 +49,38 @@
   <div class="grid">
     <div class="card">
       <h3>Rückstellungen statt Unterkonten</h3>
-      <p>Beliebig viele Posten mit Symbol, Farbe und Priorität – ohne dass die Bank dafür ein kostenpflichtiges Unterkonto verlangt.</p>
+      <p>Beliebig viele Posten mit Bezeichnung, Betrag, Symbol, zurückhaltender Farbe und Priorität – ohne dass die Bank dafür ein kostenpflichtiges Unterkonto verlangt.</p>
     </div>
     <div class="card">
       <h3>Deutliche Warnung</h3>
-      <p>Reicht der Bestand nicht mehr, wird die Unterdeckung beziffert und farblich, textlich und über ein eigenes Symbol gekennzeichnet.</p>
+      <p>Reicht der Bestand nicht mehr, wird die Unterdeckung beziffert – nicht nur farblich, sondern mit eigenem Symbol und Klartext. Auch ohne Farbwahrnehmung eindeutig.</p>
     </div>
     <div class="card">
-      <h3>Deckungsreihenfolge</h3>
-      <p>Bei knappen Beständen zeigt die App, welche Rückstellung zuerst bedient wird und welche nur teilweise gedeckt ist.</p>
+      <h3>Deckung nach Priorität</h3>
+      <p>Bei knappen Beständen zeigt die App je Eintrag, ob er vollständig, teilweise oder nicht mehr gedeckt ist. Die Reihenfolge änderst du jederzeit per Ziehen.</p>
     </div>
     <div class="card">
       <h3>Ziele und Fälligkeiten</h3>
       <p>Optional lässt sich zu jeder Rückstellung ein Zielbetrag mit Termin hinterlegen. Die nötige Monatsrate rechnet die App aus.</p>
     </div>
     <div class="card">
-      <h3>Verlauf</h3>
-      <p>Jede Kontostandsaktualisierung wird festgehalten. So wird sichtbar, wie sich die freie Liquidität über die Monate entwickelt.</p>
+      <h3>Verlauf statt Momentaufnahme</h3>
+      <p>Jede Aktualisierung des Kontostands wird festgehalten. So wird sichtbar, wie sich Kontostand und freie Liquidität über die Monate entwickelt haben.</p>
     </div>
     <div class="card">
       <h3>Mehrere Konten</h3>
-      <p>Giro, Tagesgeld und Bargeld getrennt führen, gemeinsam auswerten – oder einzelne Konten aus der Rechnung heraushalten.</p>
+      <p>Girokonto, Tagesgeld und Bargeld getrennt führen, gemeinsam auswerten – oder einzelne Konten aus der Rechnung heraushalten.</p>
     </div>
   </div>
+
+  <h2>Außerdem</h2>
+  <ul>
+    <li>Beträge auf Tastendruck ausblenden – praktisch in Bahn oder Büro.</li>
+    <li>Eigene Warnschwelle, ab der es „knapp“ wird.</li>
+    <li>CSV-Export aller Konten, Rückstellungen und Verlaufseinträge.</li>
+    <li>Dunkelmodus, Dynamic Type und VoiceOver von Anfang an mitgedacht.</li>
+    <li>Kein Konto, keine Anmeldung, sofort startklar.</li>
+  </ul>
 
   <h2>Was die App nicht macht</h2>
   <ul>
@@ -85,13 +96,29 @@
       iCloud der eigenen Apple-ID. Der Anbieter hat darauf keinen Zugriff und betreibt
       keinen eigenen Server.
     </p>
+    <p class="meta">
+      Im App Store steht die App deshalb unter „App-Datenschutz“ auf
+      „Keine Daten erfasst“ – nicht als Zusage im Fließtext, sondern als Angabe,
+      die der App Store selbst ausweist.
+    </p>
     <p><a href="datenschutz.html">Zur Datenschutzerklärung</a></p>
   </div>
 
   <h2>Verfügbarkeit</h2>
   <p>
-    Rücklagenplaner erscheint für das iPhone ab iOS 18. Die App ist kostenlos nutzbar;
-    einzelne Funktionen lassen sich über einen einmaligen In-App-Kauf freischalten.
+    Rücklagenplaner erscheint für das iPhone ab iOS 18. Kostenlos nutzbar sind ein Konto
+    und drei Rückstellungen. Mehrere Konten, unbegrenzte Rückstellungen, der Verlauf und
+    der CSV-Export gehören zu Rücklagenplaner Pro: ab 0,99 € im Monat, 9,99 € im Jahr
+    oder 14,99 € einmalig ohne Abonnement.
+  </p>
+  <p>
+    Die iCloud-Synchronisierung bleibt für alle kostenlos. Wer die Entwicklung darüber
+    hinaus unterstützen mag, kann in der App einen Kaffee spendieren – freiwillig, und
+    ohne dass damit eine Funktion freigeschaltet wird.
+  </p>
+  <p class="meta">
+    Preise für den deutschen App Store; in anderen Ländern zeigt Apple die jeweils
+    umgerechneten Beträge.
   </p>
   <p class="meta"><span class="placeholder" data-appstore="ruecklagenplaner">[App-Store-Link nach Veröffentlichung eintragen]</span></p>
 </main>
