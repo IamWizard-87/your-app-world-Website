@@ -99,10 +99,36 @@
 
   <h3>How do I get my collection onto another device?</h3>
   <p>
-    With Pro through “Settings → Export backup” and “Restore backup” on the other device – that
+    With Pro through “Settings → Export backup” and “Restore backup” on the other device –
+    <strong>restoring needs no Pro</strong>, only creating the file does. That
     transfers collection, wishlist and decks together. Without Pro you export the collection as
     an Excel file and read it in again on the other device; the limit of 50 cards applies there
-    again. There is deliberately no automatic sync between devices.
+    again. There is deliberately no automatic sync between devices – and the iCloud backup is not one
+    either: it keeps one file per device and merges nothing.
+  </p>
+
+  <h3>What happens if I delete the app or lose my phone?</h3>
+  <p>
+    Those are two different cases. On a <strong>device change, loss, theft or defect</strong> the
+    collection comes back: it sits in the app’s “Application Support” folder and is therefore part
+    of the regular iCloud device backup that you restore while setting the new iPhone up – provided
+    the backup is switched on in the iOS settings and your iCloud storage was sufficient.
+  </p>
+  <p>
+    <strong>If you delete the app</strong>, the device backup does not help: it is only replayed
+    while a device is being set up, and iOS has no way to restore the data of a single app. If you
+    only want the app off your phone for a while, use “Offload App” instead of “Delete App” in the
+    iOS settings – that keeps the data.
+  </p>
+  <p>
+    <strong>That is exactly what the automatic iCloud backup in Pro is for.</strong> The app then
+    places a copy of your database in the “My TCG Collection” folder in your iCloud. That file
+    survives deleting the app: after reinstalling, you fetch it back through
+    “Settings → Restore from iCloud”. It sits in your iCloud storage, not with the provider.
+  </p>
+  <p>
+    Without Pro, export the collection as an Excel file – that is free – and keep it somewhere that
+    outlives the app. Such a file survives all three cases.
   </p>
 
   <h3>I bought Pro and reinstalled the app.</h3>
@@ -137,7 +163,9 @@
 
   <h3>I emptied my collection by accident.</h3>
   <p>
-    With Pro you restore the last backup file through “Settings → Restore backup”. Without a
+    You restore the last backup file through “Settings → Restore backup”, and that works
+    <strong>without Pro</strong> – a backup you once created stays available to you even after a
+    subscription has lapsed. Without a
     backup the state cannot be recovered – which is why the app asks for a typed confirmation
     word before emptying. Without Pro an Excel export helps as an interim state: you read that
     file back in through “Settings → Import”.
