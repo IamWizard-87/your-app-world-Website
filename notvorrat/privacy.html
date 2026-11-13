@@ -21,9 +21,10 @@
 <h2>Controller</h2>
 <p>Stefan Hölting<br>c/o Autorenglück #42102<br>Albert-Einstein-Straße 47<br>02977 Hoyerswerda<br>Germany<br>E-mail: support-notvorrat@your-app-world.de</p>
 <h2>The most important point first</h2>
-<p>Notvorrat is a purely on-device app. There are no user accounts, no registration, no server run by the developer, no advertising, no tracking and no third-party analytics tools. Everything you enter – household composition, supplies, expiry dates, checklists, notes and shopping list – stays on your device, or, if you turn it on, in your private iCloud.</p>
-<p>The one exception is receipts and shelf photos: only if you use these features and have given your consent does the text of the item lines without prices, or the photo, go to Apple for analysis – not to the developer.</p>
-<p>The developer has no access to this data at any time.</p>
+<p>Notvorrat works without a user account. There is no registration, no server run by the developer, no advertising, no tracking and no third-party analytics tools. Everything you enter – household composition, supplies, expiry dates, checklists, notes and shopping list – stays on your device, or, if you turn it on, in your private iCloud.</p>
+<p>The only things that leave your device are the ones you expressly allow, and there are two of them:</p>
+<ul><li>For receipts and shelf photos, the text of the item lines without prices, or the photo, goes to Apple for analysis.</li><li>When you scan a barcode, the barcode goes to the open product database Open Food Facts to look up a name and a pack size.</li></ul>
+<p>The app asks for your consent separately for each beforehand, and you can withdraw each separately. Nothing goes to the developer in either case; they have no access to your data at any time.</p>
 <h2>Processing on the device</h2>
 <p>The following data is stored exclusively locally:</p>
 <ul><li>The composition of your household: age groups, special circumstances such as pregnancy or breastfeeding, pets with body weight, optional names and notes</li><li>Your supplies with name, quantity, storage location, best-before date and optionally the scanned barcode</li><li>The state of your checklists including custom entries, notes and expiry dates</li><li>Your shopping list</li><li>App settings such as the preparedness period, diet profile, type of home and reminder times</li></ul>
@@ -31,7 +32,7 @@
 <h2>Special categories of personal data</h2>
 <p>Information about pregnancy, breastfeeding or medication in the note fields may constitute health data within the meaning of Art. 9 GDPR. It is processed exclusively on your device, is voluntary for calculating your requirement and can be deleted at any time. It is not transmitted to the developer.</p>
 <h2>Camera</h2>
-<p>The camera is used exclusively to scan barcodes and expiry dates and to photograph packaging, receipts and storage shelves – and only when you open the relevant feature. Barcode scanning, date scanning and photo recognition of packaging run entirely on the device; no images are stored or transmitted, and the scanned code is not sent to any product database on the internet. When scanning a date, the app takes only the date you select from the recognised text; the rest of the text is not stored. What is transmitted for receipts and shelf photos is set out in the section “Receipts and shelf photos”.</p>
+<p>The camera is used exclusively to scan barcodes and expiry dates and to photograph packaging, receipts and storage shelves – and only when you open the relevant feature. Barcode scanning, date scanning and photo recognition of packaging run entirely on the device; no images are stored or transmitted. What happens to a scanned barcode afterwards is set out in the section “Barcode lookups with Open Food Facts”. When scanning a date, the app takes only the date you select from the recognised text; the rest of the text is not stored. What is transmitted for receipts and shelf photos is set out in the section “Receipts and shelf photos”.</p>
 <p>The legal basis is Art. 6 (1) (a) GDPR – you grant the permission in iOS and can withdraw it there at any time.</p>
 <h2>Photo recognition with Apple Intelligence</h2>
 <p>On devices with Apple Intelligence you can photograph packaging or choose a photo from your library to obtain suggested items. Apple's language model analyses the photo exclusively on your device; it is transmitted neither to the developer nor to Apple or third parties, and is not stored after analysis. From your library the app receives only the single photo you select. Only the items you confirm in the review list are saved.</p>
@@ -41,6 +42,12 @@
 <p>According to Apple, the data in Private Cloud Compute is used only to answer the particular request, is not stored afterwards and is not accessible to Apple either. The developer runs no server and receives neither the photo nor the receipt text nor the result. In the app, the photo and receipt text remain only until you close the dialog; only the items you accept in the review list are saved.</p>
 <p>The provider of Private Cloud Compute is Apple Inc., One Apple Park Way, Cupertino, CA 95014, USA, or Apple Distribution International Ltd., Cork, Ireland. Apple's privacy policy applies: <a href="https://www.apple.com/legal/privacy/">https://www.apple.com/legal/privacy/</a></p>
 <p>The legal basis is your consent under Art. 6 (1) (a) GDPR. You can withdraw it at any time under “More → Cloud recognition”; this does not affect the lawfulness of analyses carried out until then. Without consent, every other way of adding items remains available unchanged.</p>
+<h2>Barcode lookups with Open Food Facts</h2>
+<p>When you scan a barcode, the app can look the code up in the open product database Open Food Facts and suggest a name and a pack size. This happens only after your consent, which the app asks for the first time you scan – and only if the product is not already stored on your device.</p>
+<p>Only the barcode is transmitted. No details about your household, your supplies or your device go with it, no account and no identifier. The app identifies itself by its name and version number only, as the database asks every app to do; no contact address is transmitted. As with any web page you open, your IP address reaches the server; according to Open Food Facts it is logged for security reasons and for statistics, and that log is kept for three years. The app writes nothing back to the database – Open Food Facts never learns what you keep in your supplies.</p>
+<p>What comes back is a name and a pack size, as far as the database has them. That is a suggestion you can check and change before saving; only what you apply is stored. You always choose the supply group yourself.</p>
+<p>The database is operated by Open Food Facts, an association under the French law of 1 July 1901, 21 Rue des Îles, 94100 Saint-Maur-des-Fossés, France, e-mail contact@openfoodfacts.org. The Open Food Facts privacy policy is available at <a href="https://world.openfoodfacts.org/privacy.">https://world.openfoodfacts.org/privacy.</a> The database is published under the Open Database License (ODbL) and its contents under the Database Contents License.</p>
+<p>The legal basis is your consent under Art. 6 (1) (a) GDPR. You can withdraw it at any time under “More → Product database”; this does not affect the lawfulness of the lookups carried out up to that point. Without your consent, barcode scanning continues to work – it recognises products you have already entered on this device.</p>
 <h2>Notifications</h2>
 <p>Reminders about expiring supplies are scheduled locally on the device. There is no push service run by the developer, no device tokens and no server connection.</p>
 <h2>Reminders app</h2>
@@ -64,8 +71,8 @@
 <p>Messages are deleted as soon as they are no longer needed, and at the latest once statutory retention periods have expired.</p>
 <h2>Recipients and third countries</h2>
 <p>We do not pass on the data you enter in the app – we have no access to it. Personal data has recipients only in the cases described above:</p>
-<ul><li>Apple – where iCloud syncing is turned on, where receipts and shelf photos are analysed after your consent, and for purchase and billing</li><li>Google – operation of the support mailbox</li></ul>
-<p>With both, processing may also take place in the USA. The transfers are safeguarded by the European Commission's standard contractual clauses; Apple and Google are additionally certified under the EU-US Data Privacy Framework.</p>
+<ul><li>Apple – where iCloud syncing is turned on, where receipts and shelf photos are analysed after your consent, and for purchase and billing</li><li>Open Food Facts – for barcode lookups after your consent</li><li>Google – operation of the support mailbox</li></ul>
+<p>With Apple and Google, processing may also take place in the USA. The transfers are safeguarded by the European Commission's standard contractual clauses; both are additionally certified under the EU-US Data Privacy Framework. Open Food Facts is based in France – barcode lookups involve no transfer to a third country.</p>
 <h2>Retention and deletion</h2>
 <p>Your data remains stored until you delete it. You delete individual entries directly in the app, and all of them at once under “More → Back up data → Delete all data”. All local data is removed when you delete the app from your device. Data synced via iCloud must additionally be removed in the iOS settings under “Apple Account → iCloud → Manage Storage”.</p>
 <h2>Your rights</h2>
@@ -80,7 +87,7 @@ IP address; we do not receive the server logs ourselves. The legal basis is
 Art. 6 (1) (f) GDPR. Details are set out in the privacy policy of the website:
 <a href="https://your-app-world.de/#datenschutz">your-app-world.de</a></p>
 
-<p class="meta">Last updated: 26 September 2026</p>
+<p class="meta">Last updated: 13 November 2026</p>
 </main>
 <footer class="site">
   <div class="wrap">
